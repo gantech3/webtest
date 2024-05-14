@@ -12,32 +12,32 @@ document.write("<p>JavaScriptTest</p>");
 
   <script>
   async function fetchData(url, options) {
-  try {
-    const response = await fetch(url, options);
+	try {
+    		const response = await fetch(url, options);
 		const data = await response.json();
 	} catch (error) {
-    console.error('Error:', error);
+    		console.error('Error:', error);
 	}
-</script>
+  }
+  </script>
 
   <script>
-document.write("<p>JavaScriptTest2</p>");
-const url = 'https://script.google.com/macros/s/AKfycbxVRb5kOZWxAy5eJfKYqmYwTk3ciumUAQ9DKPz5RptvTbS4ULJeIsKvBOpkmpRBVTg/exec';
-const options = {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-   "id": "aoki",
-   "mode": "read",
-   "value": "1"
-  })
-}
-const ret= fetchData(url, options);  
-document.write("<p>ret.result</p>");
-  }
-document.write("<p>JavaScriptTest3</p>");
+	document.write("<p>JavaScriptTest2</p>");
+	const url = 'https://script.google.com/macros/s/AKfycbxVRb5kOZWxAy5eJfKYqmYwTk3ciumUAQ9DKPz5RptvTbS4ULJeIsKvBOpkmpRBVTg/exec';
+	const options = {
+  		method: 'POST',
+  		headers: {
+    			'Content-Type': 'application/json'
+  		},
+  		body: JSON.stringify({
+   			"id": "aoki",
+   			"mode": "read",
+   			"value": "1"
+  		})
+	}
+	const ret= fetchData(url, options);  
+	document.write("<p>ret.result</p>");
+	document.write("<p>JavaScriptTest3</p>");
 </script>
 
  </body>
