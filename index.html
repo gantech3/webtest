@@ -43,6 +43,17 @@ document.write("<p>JavaScriptTest</p>");
 	document.write("<p>strret="+JSON.stringify(ret)+"</p>");
   	document.write("<p>JavaScriptTest3</p>");
 </script>
+<script>
+
+fetch(url, options)
+  .then((res) => res.json())
+  .then((data) => {
+    const dataStr = JSON.stringify(data)
+      console.log(data)
+      localStorage.setItem('localData', dataStr)
+  })
+	
+</script>
 
  </body>
 </html>
