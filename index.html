@@ -5,7 +5,7 @@
  </head>
  <body>
    <h1>HTML</h1>
-   <p>GAS JSON load Test5.</p>
+   <p>GAS JSON load Test6.</p>
  <script>
 	document.write("<p>Nowloading GAS data</p>");
 	const url = 'https://script.google.com/macros/s/AKfycbxVRb5kOZWxAy5eJfKYqmYwTk3ciumUAQ9DKPz5RptvTbS4ULJeIsKvBOpkmpRBVTg/exec';
@@ -23,8 +23,8 @@
   		})
 	}
 
-fetch(url, options)
 	/*
+fetch(url, options)
   .then((res) => res.json())
   .then((data) => {
     const dataStr = JSON.stringify(data)
@@ -32,10 +32,11 @@ fetch(url, options)
       localStorage.setItem('localData', dataStr)
   	document.write("<p>getJsonString="+dataStr+"...ok?</p>")
   }) */
+fetch(url, options)
   .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
+//    if (!response.ok) {
+//      throw new Error('Network response was not ok');
+//    }
     return response.text(); // ここではtext()を使用していますが、実際にはGASのレスポンスに合わせて適宜変更してください。
   })
   .then(data => {
