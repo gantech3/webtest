@@ -23,7 +23,15 @@ fetch(url, opt)
   .then(text => document.write("<p>getJsonString="+text+"...ok?</p>") )
   .catch(err => console.log(err))
 
-
+fetch(url, opt)
+  .then((res) => res.json())
+  .then((data) => {
+    const dataStr = JSON.stringify(data)
+      console.log(data)
+      localStorage.setItem('localData', dataStr)
+  	document.write("<p>getJsonString="+dataStr+"...ok?</p>")
+  })
+	 
 	/* 
 	document.write("<p>Nowloading GAS data</p>");
 	const url = 'https://script.google.com/macros/s/AKfycbxVRb5kOZWxAy5eJfKYqmYwTk3ciumUAQ9DKPz5RptvTbS4ULJeIsKvBOpkmpRBVTg/exec';
