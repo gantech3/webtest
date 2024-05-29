@@ -5,7 +5,7 @@
  </head>
  <body>
    <h1>HTML</h1>
-   <p>GAS JSON load Test A6.</p>
+   <p>GAS JSON load Test A7.</p>
  <script>
 	document.write("<p>Nowloading GAS data</p>");
 const url = 'https://script.google.com/macros/s/AKfycbzylyRc4N3mqB9uX5gNpEjIsHJ_bE_Ccikpq-ZpOm1mP4AVIkvU6lfipW_wNwd1nObA/exec';
@@ -18,19 +18,19 @@ mode: 'no-cors',
   body: 'id=aoki&mode=read&value=1'
 }
 
-//fetch(url, opt)
-//  .then(res => res.text())
-//  .then(text => document.write("<p>getJsonString="+text+"...ok?</p>") )
-//  .catch(err => console.log(err))
-
 fetch(url, opt)
-  .then((res) => res.json())
-  .then((data) => {
-    const dataStr = JSON.stringify(data)
-      console.log(data)
-      localStorage.setItem('localData', dataStr)
-  	document.write("<p>getJsonString="+dataStr+"...ok?</p>")
-  })
+  .then(res => res.text())
+  .then(text => document.write("<p>getJsonString="+text+"...ok?</p>") )
+  .catch(err => console.log(err))
+
+//fetch(url, opt)
+//  .then((res) => res.json())
+//  .then((data) => {
+//    const dataStr = JSON.stringify(data)
+//      console.log(data)
+//      localStorage.setItem('localData', dataStr)
+//  	document.write("<p>getJsonString="+dataStr+"...ok?</p>")
+//  })
 	 
 	/* 
 	document.write("<p>Nowloading GAS data</p>");
