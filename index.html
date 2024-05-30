@@ -5,7 +5,7 @@
  </head>
  <body>
    <h1>HTML</h1>
-   <p>GAS JSON load Test A10.</p>
+   <p>GAS JSON load Test A11.</p>
  <script>
 	document.write("<p>Nowloading GAS data</p>");
 const url = 'https://script.google.com/macros/s/AKfycbzylyRc4N3mqB9uX5gNpEjIsHJ_bE_Ccikpq-ZpOm1mP4AVIkvU6lfipW_wNwd1nObA/exec';
@@ -19,10 +19,20 @@ mode: 'no-cors',
 }
 
 fetch(url, opt)
+    .then((response) => {
+        response.text().then((text) => {
+            alert(text);
+        });
+    })
+    .catch((error) => {
+        alert(error.message);
+    });
+/*	 
+fetch(url, opt)
   .then(res => res.text())
   .then(text => console.log("text="+text+"!"))
   .catch(err => console.log(err))
-	
+*/	
 //fetch(url, opt)
 //  .then(res => res.text())
 //	.then(text => console.log("text="+text+"!") )
