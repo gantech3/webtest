@@ -22,7 +22,7 @@ mode: 'no-cors',
 fetch(url, opt)
     .then((response) => {
         response.text().then((text) => {
-            alert(text);
+            alert("alert="+text+"!");
         });
     })
     .catch((error) => {
