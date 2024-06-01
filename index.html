@@ -1,12 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
  <head>
+  <meta charset="UTF-8">
   <title>HTML</title>
  </head>
  <body>
    <h1>HTML</h1>
-   <p>GAS JSON load Test A18.</p>
+   <p>GAS JSON load Test A19.</p>
+    <script>
+        document.getElementById('sendRequest').addEventListener('click', function() {
+const url = 'https://script.google.com/macros/s/AKfycbzylyRc4N3mqB9uX5gNpEjIsHJ_bE_Ccikpq-ZpOm1mP4AVIkvU6lfipW_wNwd1nObA/exec';
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain' // 'Content-Type'を'text/plain'に設定
+                },
+                body: "Hello, this is plain text data" // テキスト形式のデータを送信
+            };
+
+            fetch(url, options)
+                .then(response => response.text()) // text()メソッドを使用してテキスト形式のレスポンスを取得
+                .then(data => {
+                    console.log("data="+data+"!");
+                    document.write("data="+data+!");
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+ 
  <script>
+	 /*
 	document.write("<p>Nowloading GAS data</p>");
 const url = 'https://script.google.com/macros/s/AKfycbzylyRc4N3mqB9uX5gNpEjIsHJ_bE_Ccikpq-ZpOm1mP4AVIkvU6lfipW_wNwd1nObA/exec';
 const options = {
@@ -25,7 +48,7 @@ const options = {
                     document.write("<p>getJsonString="+data+"...ok?</p>");
                 })
                 .catch(error => console.error('Error:', error));
-
+*/
 	 
 	 /*
 const opt = {
