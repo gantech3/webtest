@@ -6,7 +6,7 @@
  </head>
  <body>
    <h1>HTML</h1>
-   <p>GAS JSON load Test A23.</p>
+   <p>GAS JSON load Test A24.</p>
     <script>
 const url = 'https://script.google.com/macros/s/AKfycbzylyRc4N3mqB9uX5gNpEjIsHJ_bE_Ccikpq-ZpOm1mP4AVIkvU6lfipW_wNwd1nObA/exec';
             const options = {
@@ -16,7 +16,8 @@ const url = 'https://script.google.com/macros/s/AKfycbzylyRc4N3mqB9uX5gNpEjIsHJ_
 //                    'Content-Type': 'text/plain' // 'Content-Type'を'text/plain'に設定
          	'Content-Type' : 'application/x-www-form-urlencoded',
                 },
-                body: "Hello, this is plain text data" // テキスト形式のデータを送信
+//                body: "Hello, this is plain text data" // テキスト形式のデータを送信
+		  body: 'id=aoki&mode=read&value=1'
             };
                     document.write("fetch start");
 
