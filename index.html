@@ -6,10 +6,11 @@
  </head>
  <body>
    <h1>HTML</h1>
-   <p>GAS JSON load Test A25.</p>
+   <p>GAS JSON load Test A26.</p>
  <button id="sendRequest">Send POST Request</button>
     <div id="response"></div>	 
     <script>
+	    document.getElementById('sendRequest').addEventListener('click', function() {
 const url = 'https://script.google.com/macros/s/AKfycbzylyRc4N3mqB9uX5gNpEjIsHJ_bE_Ccikpq-ZpOm1mP4AVIkvU6lfipW_wNwd1nObA/exec';
             const options = {
                 method: 'POST',
@@ -31,6 +32,7 @@ const url = 'https://script.google.com/macros/s/AKfycbzylyRc4N3mqB9uX5gNpEjIsHJ_
 			document.getElementById('response').innerText = data;
                 })
                 .catch(error => console.error('Error:', error));
+		          });
     </script>
  
  <script>
