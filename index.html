@@ -6,7 +6,9 @@
  </head>
  <body>
    <h1>HTML</h1>
-   <p>GAS JSON load Test A24.</p>
+   <p>GAS JSON load Test A25.</p>
+ <button id="sendRequest">Send POST Request</button>
+    <div id="response"></div>	 
     <script>
 const url = 'https://script.google.com/macros/s/AKfycbzylyRc4N3mqB9uX5gNpEjIsHJ_bE_Ccikpq-ZpOm1mP4AVIkvU6lfipW_wNwd1nObA/exec';
             const options = {
@@ -25,7 +27,8 @@ const url = 'https://script.google.com/macros/s/AKfycbzylyRc4N3mqB9uX5gNpEjIsHJ_
                 .then(response => response.text()) // text()メソッドを使用してテキスト形式のレスポンスを取得
                 .then(data => {
                     console.log("data="+data+"!");
-                    document.write("data="+data+"!");
+//                    document.write("data="+data+"!");
+			document.getElementById('response').innerText = data;
                 })
                 .catch(error => console.error('Error:', error));
     </script>
