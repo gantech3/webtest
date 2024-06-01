@@ -6,33 +6,46 @@
  </head>
  <body>
    <h1>HTML</h1>
-   <p>GAS JSON load Test A26.</p>
- <button id="sendRequest">Send POST Request</button>
-    <div id="response"></div>	 
+   <p>GAS JSON load Test A27.</p>
     <script>
-	    document.getElementById('sendRequest').addEventListener('click', function() {
-const url = 'https://script.google.com/macros/s/AKfycbzylyRc4N3mqB9uX5gNpEjIsHJ_bE_Ccikpq-ZpOm1mP4AVIkvU6lfipW_wNwd1nObA/exec';
-            const options = {
-                method: 'POST',
-//	mode: 'no-cors',
+	const url = 'https://script.google.com/macros/s/AKfycbzylyRc4N3mqB9uX5gNpEjIsHJ_bE_Ccikpq-ZpOm1mP4AVIkvU6lfipW_wNwd1nObA/exec';
+    	const opt0 = {
+		method: 'POST',
+//		mode: 'no-cors',
                 headers: {
 //                    'Content-Type': 'text/plain' // 'Content-Type'を'text/plain'に設定
-         	'Content-Type' : 'application/x-www-form-urlencoded',
+         		'Content-Type' : 'application/x-www-form-urlencoded',
                 },
-//                body: "Hello, this is plain text data" // テキスト形式のデータを送信
 		  body: 'id=aoki&mode=read&value=1'
-            };
-                    document.write("fetch start");
+    	};
+    	const opt1 = {
+		method: 'POST',
+//		mode: 'no-cors',
+                headers: {
+         		'Content-Type' : 'application/json',
+                },
+  		body: JSON.stringify({
+   			"id": "aoki",
+   			"mode": "read",
+   			"value": "1"
+  		})
+	};
 
-            fetch(url, options)
+	    document.write("fetch start");
+            fetch(url, opt1)
                 .then(response => response.text()) // text()メソッドを使用してテキスト形式のレスポンスを取得
                 .then(data => {
-                    console.log("data="+data+"!");
-//                    document.write("data="+data+"!");
-			document.getElementById('response').innerText = data;
+                    document.write("text="+data+"!");
                 })
                 .catch(error => console.error('Error:', error));
-		          });
+            fetch(url, opt1)
+		.then((res) => res.json())
+  		.then((data) => {
+    			const dataStr = JSON.stringify(data)
+      			localStorage.setItem('localData', dataStr)
+  			document.write("<p>getJsonString="+dataStr+"...ok?</p>")
+                })
+                .catch(error => console.error('Error:', error));
     </script>
  
  <script>
