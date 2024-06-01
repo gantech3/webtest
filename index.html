@@ -6,7 +6,7 @@
  </head>
  <body>
    <h1>HTML</h1>
-   <p>GAS JSON load Test A32.</p>
+   <p>GAS JSON load Test A33.</p>
     <script>
 	const url = 'https://script.google.com/macros/s/AKfycbzylyRc4N3mqB9uX5gNpEjIsHJ_bE_Ccikpq-ZpOm1mP4AVIkvU6lfipW_wNwd1nObA/exec';
     	const opt1 = {
@@ -48,11 +48,12 @@
                 .catch(error => console.error('Error:', error));
 */
 	    fetch(url, opt3)
-		.then((res) => res.json())
-  		.then((data) => {
-    			const dataStr = JSON.stringify(data);
+		.then(res => res.json())
+  		.then(data => {
+                    document.write("json!");
+//			const dataStr = JSON.stringify(data);
 //      			localStorage.setItem('localData', dataStr)
-  			document.write("<p>json="+dataStr+"!</p>");
+//  			document.write("<p>json="+dataStr+"!</p>");
                 })
                 .catch(error => console.error('Error:', error));
 
