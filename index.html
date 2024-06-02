@@ -6,7 +6,7 @@
  </head>
  <body>
    <h1>HTML</h1>
-   <p>GAS JSON load Test A46.</p>
+   <p>GAS JSON load Test A47.</p>
     <script>
 	const url = 'https://script.google.com/macros/s/AKfycbzylyRc4N3mqB9uX5gNpEjIsHJ_bE_Ccikpq-ZpOm1mP4AVIkvU6lfipW_wNwd1nObA/exec';
 	const formData = new URLSearchParams();
@@ -47,7 +47,7 @@
 		mode: 'no-cors',
                 headers: {
 //         		'Content-Type' : 'application/json',
-//    			"Accept": "application/json",
+    			"Accept": "application/json",
     			"Content-Type": "application/x-www-form-urlencoded",
 		},
     		body: formData
@@ -58,10 +58,17 @@
 //  		})
 	};
 	fetch(url, opt3)
+                .then(response => response.json())
+                .then(data => {
+                    document.write("text="+data+"!");
+                })
+                .catch(error => console.error('Error:', error));
+/*	    
 	    .then((response) => {
 		response.json().then((json) => {
      			alert(json.text);
 		});
+*/
 /*		
 		.then((response) => response.json())
   		.then((result) => {
