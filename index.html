@@ -6,7 +6,7 @@
  </head>
  <body>
    <h1>HTML</h1>
-   <p>GAS JSON load Test A45.</p>
+   <p>GAS JSON load Test A46.</p>
     <script>
 	const url = 'https://script.google.com/macros/s/AKfycbzylyRc4N3mqB9uX5gNpEjIsHJ_bE_Ccikpq-ZpOm1mP4AVIkvU6lfipW_wNwd1nObA/exec';
 	const formData = new URLSearchParams();
@@ -58,6 +58,11 @@
 //  		})
 	};
 	fetch(url, opt3)
+	    .then((response) => {
+		response.json().then((json) => {
+     			alert(json.text);
+		});
+/*		
 		.then((response) => response.json())
   		.then((result) => {
 //    			console.log(result); // {param1: 'hoge', param2: 'fuga'} が返ってくる
@@ -65,6 +70,7 @@
 			document.write("json="+(JSON.stringify(result))+"!");
 		})
  		.catch((e) => console.log(e));
+*/
 /*	    
 	    fetch(url, opt3)
 		.then(res => res.json())
