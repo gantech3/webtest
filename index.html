@@ -6,7 +6,7 @@
  </head>
  <body>
    <h1>HTML</h1>
-   <p>GAS JSON load Test A42.</p>
+   <p>GAS JSON load Test A43.</p>
     <script>
 	const url = 'https://script.google.com/macros/s/AKfycbzylyRc4N3mqB9uX5gNpEjIsHJ_bE_Ccikpq-ZpOm1mP4AVIkvU6lfipW_wNwd1nObA/exec';
 	const formData = new URLSearchParams();
@@ -44,7 +44,7 @@
 */
     	const opt3 = {
 		method: 'POST',
-		mode: 'no-cors',
+//		mode: 'no-cors',
                 headers: {
 //         		'Content-Type' : 'application/json',
     			"Accept": "application/json",
@@ -58,7 +58,7 @@
 //  		})
 	};
 	fetch(url, opt3)
-		.then((response) => response.text())
+		.then((response) => response.json())
   		.then((result) => {
 //    			console.log(result); // {param1: 'hoge', param2: 'fuga'} が返ってくる
                     document.write("text="+result+"!");
