@@ -6,25 +6,17 @@
  </head>
  <body>
    <h1>HTML</h1>
-   <p>GAS JSON load Test 1.</p>
+   <p>GAS JSON load Test 2.</p>
    <script>
 	const url = 'https://script.google.com/macros/s/AKfycbzylyRc4N3mqB9uX5gNpEjIsHJ_bE_Ccikpq-ZpOm1mP4AVIkvU6lfipW_wNwd1nObA/exec';
 	const formData = new URLSearchParams();
 	formData.append('id', 'aoki');
 	formData.append('mode', 'read');
 	formData.append('value', '1');
+
 	document.write("fetch start");
-/*
-	    const opt1 = {
-		method: 'POST',
-		mode: 'no-cors',
-                headers: {
-	    		'Content-Type': 'text/plain',
-                },
-		body: 'id=aoki&mode=read&value=1'
-    	};
-*/
-/*	    
+
+	   /*	    
      const opt2 = {
 		method: 'POST',
 //		mode: 'no-cors',
@@ -57,7 +49,7 @@
 	fetch(url, plainToJson)
                 .then(response => response.json())
                 .then(data => {
-			document.write("<p>mode="+data.mode+"!id="+data.id+"!</p>");
+			document.write("<p>mode="+data.mode+"!name="+data.value.name+"!</p>");
 			document.write("<p>json="+(JSON.stringify(data))+"!</p>");
                 })
                 .catch(error => console.error('Error:', error));
