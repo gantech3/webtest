@@ -6,8 +6,8 @@
  </head>
  <body>
    <h1>HTML</h1>
-   <p>GAS JSON load Test A60.</p>
-    <script>
+   <p>GAS JSON load Test 1.</p>
+   <script>
 	const url = 'https://script.google.com/macros/s/AKfycbzylyRc4N3mqB9uX5gNpEjIsHJ_bE_Ccikpq-ZpOm1mP4AVIkvU6lfipW_wNwd1nObA/exec';
 	const formData = new URLSearchParams();
 	formData.append('id', 'aoki');
@@ -43,161 +43,25 @@
                 .catch(error => console.error('Error:', error));
 */
 	// text/plain扱いでJSONデータを送受信する
-    	const opt3 = {
+    	const plainToJson = {
 		method: 'POST',
                 headers: {
 	    		'Content-Type': 'text/plain',
 		},
-//    		body: formData
   		body: JSON.stringify({
    			"id": "aoki",
    			"mode": "read",
    			"value": "1"
   		})
 	};
-	fetch(url, opt3)
+	fetch(url, plainToJson)
                 .then(response => response.json())
                 .then(data => {
-                    document.write("mode="+data.mode+"!id="+data.id+"!");
-		document.write("json="+(JSON.stringify(data))+"!");
+			document.write("<p>mode="+data.mode+"!id="+data.id+"!</p>");
+			document.write("<p>json="+(JSON.stringify(data))+"!</p>");
                 })
                 .catch(error => console.error('Error:', error));
-/*	    
-	    .then((response) => {
-		response.json().then((json) => {
-     			alert(json.text);
-		});
-*/
-/*		
-		.then((response) => response.json())
-  		.then((result) => {
-//    			console.log(result); // {param1: 'hoge', param2: 'fuga'} が返ってくる
-                    document.write("text="+result+"!");
-			document.write("json="+(JSON.stringify(result))+"!");
-		})
- 		.catch((e) => console.log(e));
-*/
-/*	    
-	    fetch(url, opt3)
-		.then(res => res.json())
-  		.then(data => {
-                    document.write("json!");
-//			const dataStr = JSON.stringify(data);
-//      			localStorage.setItem('localData', dataStr)
-//  			document.write("<p>json="+dataStr+"!</p>");
-                })
-                .catch(error => console.error('Error:', error));
-*/
+
 	</script>
- 
- <script>
-	 /*
-	document.write("<p>Nowloading GAS data</p>");
-const url = 'https://script.google.com/macros/s/AKfycbzylyRc4N3mqB9uX5gNpEjIsHJ_bE_Ccikpq-ZpOm1mP4AVIkvU6lfipW_wNwd1nObA/exec';
-const options = {
-                method: 'POST',
-	mode: 'no-cors',
-                headers: {
-                    'Content-Type': 'text/plain' // 'Content-Type'を'text/plain'に設定
-                },
-                body: "Hello, this is plain text data" // テキスト形式のデータを送信
-            };
-
-            fetch(url, options)
-                .then(response => response.text()) // text()メソッドを使用してテキスト形式のレスポンスを取得
-                .then(data => {
-                    console.log(data);
-                    document.write("<p>getJsonString="+data+"...ok?</p>");
-                })
-                .catch(error => console.error('Error:', error));
-*/
-	 
-	 /*
-const opt = {
-  method: 'POST',
-mode: 'no-cors',
-	headers: {
-//  'Content-Type': 'application/x-www-form-urlencoded'
-  'Content-Type': 'text/plain'
-	},
-  body: 'id=aoki&mode=read&value=1'
-}
-
-fetch(url, opt)
-    .then((response) => {
-        response.text().then((text) => {
-            alert("alert="+text+"!");
-document.getElementById('response').innerText = text;
-	});
-    })
-    .catch((error) => {
-        alert(error.message);
-    });
-    */
-/*	 
-fetch(url, opt)
-  .then(res => res.text())
-  .then(text => console.log("text="+text+"!"))
-  .catch(err => console.log(err))
-*/	
-//fetch(url, opt)
-//  .then(res => res.text())
-//	.then(text => console.log("text="+text+"!") )
-///	.then(text => document.write("<p>getJsonString="+text+"...ok?</p>") )
-//  .catch(err => console.log(err))
-
-//fetch(url, opt)
-//  .then((res) => res.json())
-//  .then((data) => {
-//    const dataStr = JSON.stringify(data)
-//      console.log(data)
-//      localStorage.setItem('localData', dataStr)
-//  	document.write("<p>getJsonString="+dataStr+"...ok?</p>")
-//  })
-	 
-	/* 
-	document.write("<p>Nowloading GAS data</p>");
-	const url = 'https://script.google.com/macros/s/AKfycbxVRb5kOZWxAy5eJfKYqmYwTk3ciumUAQ9DKPz5RptvTbS4ULJeIsKvBOpkmpRBVTg/exec';
-	const options = {
-  		method: 'POST',
-         	mode: 'no-cors',
-         	'Content-Type' : 'application/x-www-form-urlencoded',
-//  		headers: {
-//    			'Content-Type': 'application/json'
-//  		},
-  		body: JSON.stringify({
-   			"id": "aoki",
-   			"mode": "read",
-   			"value": "1"
-  		})
-	}
-*/
-	/*
-fetch(url, options)
-  .then((res) => res.json())
-  .then((data) => {
-    const dataStr = JSON.stringify(data)
-      console.log(data)
-      localStorage.setItem('localData', dataStr)
-  	document.write("<p>getJsonString="+dataStr+"...ok?</p>")
-  }) */
-	 /*
-fetch(url, options)
-  .then(response => {
-//    if (!response.ok) {
-//      throw new Error('Network response was not ok');
-//    }
-    return response.text(); // ここではtext()を使用していますが、実際にはGASのレスポンスに合わせて適宜変更してください。
-  })
-  .then(data => {
-  	document.write("<p>getJsonString="+data+"...ok?</p>")
-    console.log(data); // 成功した場合の処理
-  })
-  .catch(error => {
-    console.error('There was a problem with your fetch operation:', error);
-  });	
-  */
-</script>
-
  </body>
 </html>
