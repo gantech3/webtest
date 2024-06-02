@@ -14,9 +14,8 @@
 	formData.append('mode', 'read');
 	formData.append('value', '1');
 
-	document.write("fetch start");
-
 	// x-www-form-urlencodedでデータを送り、テキストで取得する
+	document.write("x-www-form-urlencoded fetch start");
 	const urlencodedToText = {
 		method: 'POST',
                 headers: {
@@ -34,6 +33,7 @@
 
 /*	   
 	// text/plain扱いでJSONデータを送受信する
+	document.write("text/plain fetch start");
     	const plainToJson = {
 		method: 'POST',
                 headers: {
