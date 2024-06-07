@@ -6,7 +6,7 @@
  </head>
  <body>
    <h1>HTML</h1>
-   <p>GAS JSON load Test 8.</p>
+   <p>GAS JSON load Test 9.</p>
    <script>
 	const url = 'https://script.google.com/macros/s/AKfycbzylyRc4N3mqB9uX5gNpEjIsHJ_bE_Ccikpq-ZpOm1mP4AVIkvU6lfipW_wNwd1nObA/exec';
 	const formData = new URLSearchParams();
@@ -14,6 +14,7 @@
 	formData.append('mode', 'read');
 	formData.append('value', '1');
 
+/*
 	// x-www-form-urlencodedでデータを送り、テキストで取得する
 	document.write("x-www-form-urlencoded fetch start");
 	const urlencodedToText = {
@@ -21,8 +22,8 @@
                 headers: {
          		'Content-Type' : 'application/x-www-form-urlencoded',
                 },
-//		body: 'id=aoki&mode=read&value=1'
-		body:'id=minami&mode=date&value=2024/4/22'
+		body: 'id=aoki&mode=read&value=1'
+//		body:'id=minami&mode=date&value=2024/4/22'
 //		body: formData	// こっちでもOK
     	};
 	fetch(url, urlencodedToText)
@@ -31,8 +32,8 @@
                     document.write("text="+data+"!");
                 })
                 .catch(error => console.error('Error:', error));
-
-/*	   
+*/
+/**/	   
 	// text/plain扱いでJSONデータを送受信する
 	document.write("text/plain fetch start");
     	const plainToJson = {
@@ -41,19 +42,23 @@
 	    		'Content-Type': 'text/plain',
 		},
   		body: JSON.stringify({
-   			"id": "aoki",
-   			"mode": "read",
-   			"value": "1"
-  		})
+//   			"id": "aoki",
+//   			"mode": "read",
+//   			"value": "1"
+			"id":"minami","mode":"date","value":"2024/4/22
+		})
 	};
+	document.write("in="+body+"!");
+
 	fetch(url, plainToJson)
                 .then(response => response.json())
                 .then(data => {
-			document.write("<p>mode="+data.mode+"!name="+data.value.name+"!</p>");
+//			document.write("<p>mode="+data.mode+"!name="+data.value.name+"!</p>");
+			document.write("<p>mark="+data.value[0].mark+"!value="+data.value[1].value+"!</p>");
 			document.write("<p>json="+(JSON.stringify(data))+"!</p>");
                 })
                 .catch(error => console.error('Error:', error));
-*/
+/**/
 	</script>
  </body>
 </html>
