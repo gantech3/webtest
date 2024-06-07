@@ -54,7 +54,7 @@
                 .then(response => response.json())
                 .then(data => {
 //			document.write("<p>mode="+data.mode+"!name="+data.value.name+"!</p>");
-			document.write("<p>mark="+data.value[0].mark+"!value="+data.value[1].value+"!</p>");
+//			document.write("<p>mark="+data.value[0].mark+"!value="+data.value[1].value+"!</p>");
 			document.write("<p>json="+(JSON.stringify(data))+"!</p>");
                 })
                 .catch(error => console.error('Error:', error));
