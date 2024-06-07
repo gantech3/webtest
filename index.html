@@ -6,7 +6,7 @@
  </head>
  <body>
    <h1>HTML</h1>
-   <p>GAS JSON load Test 11.</p>
+   <p>GAS JSON load Test 12.</p>
    <script>
 	const url = 'https://script.google.com/macros/s/AKfycbzylyRc4N3mqB9uX5gNpEjIsHJ_bE_Ccikpq-ZpOm1mP4AVIkvU6lfipW_wNwd1nObA/exec';
 	const formData = new URLSearchParams();
@@ -54,7 +54,7 @@
                 .then(response => response.json())
                 .then(data => {
 //			document.write("<p>mode="+data.mode+"!name="+data.value.name+"!</p>");
-//			document.write("<p>mark="+data.value[0].mark+"!value="+data.value[1].value+"!</p>");
+			document.write("<p>mark="+data.value[0].mark+"!value="+data.value[1].value+"!</p>");
 			document.write("<p>json="+(JSON.stringify(data))+"!</p>");
                 })
                 .catch(error => console.error('Error:', error));
